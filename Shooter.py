@@ -48,7 +48,7 @@ def draw_shield_bar(surface, x, y, percentage):
 class Player(pygame.sprite.Sprite):
  def __init__(self):
   super().__init__()
-  self.image = pygame.image.load("./assets/NAVE.png").convert()
+  self.image = pygame.image.load("./assets/player.png").convert()
   self.image.set_colorkey(BLACK)
   self.rect = self.image.get_rect()
   self.rect.centerx = WIDTH - 50
@@ -144,25 +144,25 @@ def show_go_screen():
    if event.type == pygame.KEYUP:
     waiting = False
 balloons_images = []
-balloons_list = ["./assets/GLOBOC1.png", "./assets/GLOBOB1.png","./assets/GLOBOA1.png"]
+balloons_list = ["./assets/img/Globos/GloboAzul.png", "./assets/img/Globos/GloboRojo.png","./assets/img/Globos/GloboVerde.png"]
 for img in balloons_list:
     balloons_images.append(pygame.image.load(img).convert())
 ####----------------EXPLOSTION IMAGENES --------------
 explosion_anim = []
 for i in range(3):
- file = "./assets/regularExplosion0{}.png".format(i)
+ file = "./assets/img/Explosiones/regularExplosion0{}.png".format(i)
  img = pygame.image.load(file).convert()
  img.set_colorkey(BLACK)
  img_scale = pygame.transform.scale(img, (70,70))
  explosion_anim.append(img_scale)
 # Cargar imagen de fondo
-background = pygame.image.load("./assets/FONDO.png").convert()
-background1 = pygame.image.load("./assets/PATRON.png").convert()
+background = pygame.image.load("./assets/img/Fondos/FondoGame.png").convert()
+background1 = pygame.image.load("./assets/img/Fondos/Inicio.png").convert()
 background1.set_colorkey(BLACK)
 # Cargar sonidos
-laser_sound = pygame.mixer.Sound("./assets/laser5.ogg")
-explosion_sound = pygame.mixer.Sound("./assets/Explosion.mp3")
-pygame.mixer.music.load("./assets/music.ogg")
+laser_sound = pygame.mixer.Sound("./assets/sounds/laser.ogg")
+explosion_sound = pygame.mixer.Sound("./assets/sounds/Explosion.mp3")
+pygame.mixer.music.load("./assets/sounds/music.ogg")
 pygame.mixer.music.set_volume(0.1)
 pygame.mixer.music.play(loops=-1)
 #### ----------GAME OVER
